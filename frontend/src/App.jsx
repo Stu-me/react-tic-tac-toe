@@ -1,13 +1,23 @@
 import { useState } from "react";
-import "./board.css";
+import "./square.css";
 
-function Square({ value }) {
-  // we declared our own tag(power of xml )
-  return <button className="square">Sundram</button>;
+function Square() { // we declared our own tag(power of xml )
+  
+  const [value,setValue] = useState(null); // we declare here state , function to change state and default value
+ 
+  function handleClick(){
+    setValue('X');
+  }
+  return (
+    <button 
+      className="square"
+      onClick={handleClick}
+      >{value}</button>
+  );
 }
 
 function Board() {
-  const [count, setCount] = useState(0);
+  const [squares,setSquares] = useState(Array(9).fill(null));
 
   return (
     <>
