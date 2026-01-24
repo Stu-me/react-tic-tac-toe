@@ -1,0 +1,9 @@
+.squrare{
+    margin: 0.11rem;
+    padding: 3%;
+}
+.board-row{
+    display: flex;
+    /* align-items: center ; */
+    justify-content: center;
+}
