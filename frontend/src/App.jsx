@@ -82,4 +82,28 @@ function Board() { // to rebuild the squares
     }
     return null 
   }
-export default Board;
+
+  function Game(){ 
+    // adding some state to track to Game component
+    const [xIsNext,setXIsNext] = useState(true);
+    const [history, setHistory] = useState([Array(9).fill(null)]); // array of arrays of 9 nulls
+    const currentSquares = history[history.length-1]; // last array of arrays of history
+
+    function handlePlay(nextSquares){
+      //Todo
+    }
+    return( 
+      <div className="game"> 
+        <div className="game-board"> 
+          <Board xIsNext = {xIsNext} squares= {currentSquares} onPlay = {handlePlay} />   {/* now we have complete board so now Games is parent component  */}
+        </div>
+        <div className="game-info">
+          <ol> {/* todo */} </ol>
+        </div>
+
+      </div>
+    )
+  }
+// look how we are making the <Board> completely dependent on the props 
+// now parent component is Game and everything will pass through it 
+export default Game;
