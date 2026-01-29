@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./square.css";
+import Exp from './exp.jsx';
 
 function Square({ value , onSquareClick }) { // we declared our own tag(power of xml ) now we will use in the program
   return (
@@ -37,6 +38,7 @@ function handleClick(i){                // reRendering
 
   return (
     <>
+      <div> <Exp Name='Sandy' Age = '34'></Exp> </div>
       <div className="status">{status}</div>
       <div className="board-row">
         <Square value={squares[0]} onSquareClick={()=>handleClick(0)} />
